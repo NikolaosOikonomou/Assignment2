@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Assignment2.Models.Trainer>
+@using Assignment2.Models.Enums
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<a href="Trainer/Create" class="btn btn-primary">Create Trainer</a>
+<br />
+<br />
+
+@if (TempData["message"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade in">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <strong>Success!</strong> @TempData["message"]
+    </div>
+}
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Age</th>
+            <th>Subject</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var trainer in Model)
+        {
+            <tr>
+
+                <td>@Html.DisplayFor(m => trainer.FirstName)</td>
+                <td>@Html.DisplayFor(m => trainer.LastName)</td>
+                <td>@Html.DisplayFor(m => trainer.Age)</td>
+                <td>@Html.DisplayFor(m => trainer.Subject)</td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = trainer.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = trainer.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = trainer.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+

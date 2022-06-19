@@ -1,0 +1,36 @@
+﻿@model Assignment2.Models.Trainer
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update Trainer</h2>
+
+<form method="post">
+    @Html.AntiForgeryToken();
+    <div class="form-group">
+        @Html.LabelFor(m => m.FirstName)
+        @Html.EditorFor(m => m.FirstName, new { htmlAttributes = new { @class = "form-control", placeholder = "Give your name" } })
+        @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.LastName)
+        @Html.EditorFor(m => m.LastName, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Age)
+        @Html.EditorFor(m => m.Age, new { htmlAttributes = new { @class = "form-control", placeholder = "Give your name" } })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Subject)
+        @Html.EnumDropDownListFor(m => m.Subject, new { @class = "form-control", placeholder = "Give your name" })
+    </div>
+
+    <input type="submit" value="Update" class="btn btn-success" />
+    @Html.ActionLink("Back", "Index", "", new { @class = "btn btn-primary" })
+
+</form>
