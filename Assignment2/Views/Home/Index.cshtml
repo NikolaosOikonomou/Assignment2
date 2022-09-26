@@ -4,24 +4,37 @@
 
 <div class="jumbotron">
     <h1>Assignment 2</h1>
-    <p class="lead"></p>
+    <br />
+    <p class="lead"> by Oikonomou Nikos</p>
     
 </div>
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Oikonomou Nikos</h2>
+        <h2>Model</h2>
+        <hr />
         <p>
-            
+            In this application there is one model named Trainer.
+            Where we implement a full C.R.U.D. operation.
         </p>
         
     </div>
     <div class="col-md-4">
-        <h2></h2>
-        <p></p>
+        <h2>Seed method</h2>
+        <hr />
+        <p>
+            As soon as we run the application we drop and create the database automatic.
+            The seed Method is located in MyContext folder, Inside Initializers folder in MockupDbInitializer class.
+        </p>
     </div>
     <div class="col-md-4">
-        <h2></h2>
-        <p></p>
+        <h2>Validations</h2>
+        <hr />
+        <p>
+            Our model has input validation above it's properties declaration.
+            (Taking advantage of System.ComponentModel.DataAnnotations).
+            Furthermore in create and edit View forms there is one more validation to make first
+            letter capital, in both Firstname and Lastname input fields.
+        </p>
     </div>
 </div>

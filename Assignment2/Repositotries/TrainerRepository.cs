@@ -8,6 +8,9 @@ using System.Web;
 
 namespace Assignment2.Repositotries
 {
+    /// <summary>
+    ///All the methods which interacts with the database
+    /// </summary>
     public class TrainerRepository
     {
         private ApplicationContext db;

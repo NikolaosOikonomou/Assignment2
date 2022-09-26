@@ -10,6 +10,10 @@ using System.Web.Mvc;
 
 namespace Assignment2.Controllers
 {
+
+    /// <summary>
+    /// CRUD Action methods
+    /// </summary>
     public class TrainerController : Controller
     {
         private ApplicationContext db = new ApplicationContext();
@@ -50,7 +54,6 @@ namespace Assignment2.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.NotFound);
             }
 
-
             return View(trainer);
         }
 
@@ -79,8 +82,7 @@ namespace Assignment2.Controllers
             {
                 trainerRepository.Add(trainer);
                 AlertMessage("Trainer was successfully Created!");
-                return RedirectToAction("Index");
-                
+                return RedirectToAction("Index");   
             }
 
             return View(trainer);
@@ -170,6 +172,18 @@ namespace Assignment2.Controllers
 
         }
 
+        /// <summary>
+        /// Stops the connection with the database after each interaction
+        /// </summary>
+        /// <param name="disposing"></param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
     }
 }
